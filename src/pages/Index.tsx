@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Lightbulb, Tag } from "lucide-react";
+import ParticlesBackground from "@/components/ParticlesBackground";
 import { useHangman } from "@/hooks/useHangman";
 import HangmanFigure from "@/components/HangmanFigure";
 import WordDisplay from "@/components/WordDisplay";
@@ -24,7 +25,8 @@ const Index = () => {
   }, [game.guessLetter]);
 
   return (
-    <div className="h-[100dvh] flex flex-col items-center bg-background neon-bg-grid neon-scanline overflow-hidden">
+    <div className="h-[100dvh] flex flex-col items-center bg-background overflow-hidden relative">
+      <ParticlesBackground />
       {/* Title */}
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
