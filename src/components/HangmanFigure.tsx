@@ -22,7 +22,7 @@ export default function HangmanFigure({ wrongCount, gameStatus }: HangmanFigureP
   const bodyGlow = gameStatus === "lost" ? "drop-shadow(0 0 8px hsl(0 85% 55%))" : "drop-shadow(0 0 8px hsl(320 100% 60%))";
 
   return (
-    <div className="relative flex items-center justify-center w-full max-w-[220px] mx-auto aspect-square">
+    <div className="relative flex items-center justify-center w-full max-w-[180px] mx-auto flex-1 min-h-0">
       <svg viewBox="0 0 200 200" className="w-full h-full" style={{ filter: glowFilter }}>
         {/* Gallows */}
         <motion.line x1="30" y1="180" x2="170" y2="180" stroke={neonStroke} strokeWidth="3" strokeLinecap="round"

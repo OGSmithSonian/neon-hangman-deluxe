@@ -24,18 +24,18 @@ const Index = () => {
   }, [game.guessLetter]);
 
   return (
-    <div className="min-h-[100dvh] flex flex-col items-center bg-background neon-bg-grid neon-scanline">
+    <div className="h-[100dvh] flex flex-col items-center bg-background neon-bg-grid neon-scanline overflow-hidden">
       {/* Title */}
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="font-display text-2xl sm:text-3xl font-black tracking-wider neon-text-cyan mt-4 sm:mt-6 animate-flicker select-none"
+        className="font-display text-xl sm:text-3xl font-black tracking-wider neon-text-cyan mt-2 sm:mt-4 animate-flicker select-none shrink-0"
       >
         HANGMAN
       </motion.h1>
 
       {/* Game container */}
-      <div className="relative flex flex-col items-center w-full max-w-lg flex-1 px-4 pt-3 pb-4 gap-4 sm:gap-5">
+      <div className="relative flex flex-col items-center w-full max-w-lg flex-1 min-h-0 px-4 pt-2 pb-3 gap-2 sm:gap-3">
         <GameHeader
           score={game.score}
           streak={game.streak}
@@ -49,19 +49,20 @@ const Index = () => {
           key={game.wrongCount}
           animate={game.wrongCount > 0 && !game.word.includes([...game.guessedLetters].at(-1) || "") ? { x: [-3, 3, -3, 0] } : {}}
           transition={{ duration: 0.3 }}
+          className="flex-1 min-h-0 flex items-center justify-center w-full"
         >
           <HangmanFigure wrongCount={game.wrongCount} gameStatus={game.gameStatus} />
         </motion.div>
 
         {/* Category & Hint */}
-        <div className="flex flex-col items-center gap-1.5">
+        <div className="flex flex-col items-center gap-1 shrink-0">
           <div className="flex items-center gap-1.5">
-            <Tag className="w-3.5 h-3.5 text-neon-purple" />
-            <span className="font-display text-[11px] tracking-widest neon-text-purple uppercase">{game.category}</span>
+            <Tag className="w-3 h-3 text-neon-purple" />
+            <span className="font-display text-[10px] tracking-widest neon-text-purple uppercase">{game.category}</span>
           </div>
-          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted/50 border border-border">
-            <Lightbulb className="w-3.5 h-3.5 text-neon-yellow" />
-            <span className="text-xs text-muted-foreground font-body">{game.hint}</span>
+          <div className="flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-muted/50 border border-border">
+            <Lightbulb className="w-3 h-3 text-neon-yellow" />
+            <span className="text-[11px] text-muted-foreground font-body">{game.hint}</span>
           </div>
         </div>
 
@@ -69,7 +70,7 @@ const Index = () => {
         <WordDisplay word={game.word} guessedLetters={game.guessedLetters} gameStatus={game.gameStatus} />
 
         {/* Keyboard */}
-        <div className="mt-auto w-full pb-2">
+        <div className="mt-auto w-full pb-1 shrink-0">
           <Keyboard
             word={game.word}
             guessedLetters={game.guessedLetters}
