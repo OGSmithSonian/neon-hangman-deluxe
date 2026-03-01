@@ -37,7 +37,7 @@ const Index = () => {
       </motion.h1>
 
       {/* Game container */}
-      <div className="relative flex flex-col items-center w-full max-w-lg flex-1 min-h-0 px-4 pt-2 pb-3 gap-2 sm:gap-3">
+      <div className="relative flex flex-col items-center w-full max-w-lg flex-1 min-h-0 px-4 pt-2 pb-1 gap-1 sm:gap-2">
         <GameHeader
           score={game.score}
           streak={game.streak}
