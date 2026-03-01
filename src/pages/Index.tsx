@@ -72,7 +72,7 @@ const Index = () => {
         <WordDisplay word={game.word} guessedLetters={game.guessedLetters} gameStatus={game.gameStatus} />
 
         {/* Keyboard */}
-        <div className="mt-auto w-full pb-1 shrink-0">
+        <div className="w-full shrink-0">
           <Keyboard
             word={game.word}
             guessedLetters={game.guessedLetters}
