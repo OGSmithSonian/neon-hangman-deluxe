@@ -37,7 +37,7 @@ const Index = () => {
       </motion.h1>
 
       {/* Game container */}
-      <div className="relative flex flex-col items-center w-full max-w-lg flex-1 min-h-0 px-4 pt-2 pb-1 gap-1 sm:gap-2">
+      <div className="relative flex flex-col items-center w-full max-w-lg flex-1 min-h-0 px-4 pt-2 pb-3 gap-2 sm:gap-3">
         <GameHeader
           score={game.score}
           streak={game.streak}
@@ -72,7 +72,7 @@ const Index = () => {
         <WordDisplay word={game.word} guessedLetters={game.guessedLetters} gameStatus={game.gameStatus} />
 
         {/* Keyboard */}
-        <div className="w-full shrink-0">
+        <div className="w-full shrink-0 mb-auto">
           <Keyboard
             word={game.word}
             guessedLetters={game.guessedLetters}
